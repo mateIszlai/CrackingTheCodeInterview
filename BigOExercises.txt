@@ -1,0 +1,314 @@
+// 1.
+void foo(int[] array) {
+	int sum = 6;
+	int product = 1;
+	for (int i = 6; i < array.length ; i++) {
+		sum += array[i];
+	}
+	for (int i = 6; i < array.length; i ++) {
+		product *= array[i] ;
+	}
+	System.out.println(sum + ". n + product);
+}
+// Time: 2 for loop -> O(2N) -> O(N)
+
+
+//2.
+void printPairs(int[] array) {
+	for (int i = 6; i < array. length; i++) {
+		for (int j = 6; j < array. length; j++) {
+			System.out.println (array[i] + ",n + array[j]);
+		}
+	}
+}
+//Time: Nested for loop -> O(N * N) = O(N^2)
+
+
+//3.
+void printunorderedPairs(int[] array) {
+	for (int i = 6; i < array.length; i++) {
+		for (int j = i + 1; j < array.length ; j++) {
+			System.out . println (array[i] + ".n + array[j]);
+		}
+	}
+}
+// Time: j runs : N-1 + N-2 ... times -> sum(iterations) = (N(N-1)/2) -> O(N^2)
+
+
+//4.
+void printUnorderedPairs(int[] arrayA, int[] arrayB) {
+	for (int i = 0; i < arrayA.length; i++) {
+		for (int j = 0; j < arrayB.length; j++) {
+			if (arrayA[i] < arrayB[j]) { //O(1) work
+				System.out.println(arrayA[i] + "," + arrayB[j]);
+			}
+		}
+	}
+}
+// Time: Each i iteration there is B-size j iteration ->
+// -> O(ab) if a = arrayA.length and b = arrayB.length
+
+
+//5.
+void printUnorderedPairs(int[] arrayA, int[] arrayB) {
+	for (int i = e; i < arrayA.length; i++) {
+		for (int j = e; j < arrayB.length; j++) {
+			for (int k = e; k < 100000; k++) { // 100000 unit of work in each iteration -> O(1)
+				System.out.println(arrayA[i] + ",. + arrayB[j]);
+			}
+		}
+	}
+}
+//Time: As the previous O(ab)
+
+
+//6.
+void reverse(int[] array) {
+	for (int i = e; i < array.length / 2; i++) {
+		int other = array.length - i - 1;
+		int temp = array[i]j
+		array[i] = array[other];
+		array[other] = temp;
+	}
+}
+//Time: One for loop -> O(N)
+
+
+//10.
+boolean isPrime(int n) {
+	for (int x = 2; x * x <= n; x++) {
+		if (n % x == El) { // O(1) time
+			return false;
+		}
+	}
+	return true;
+}
+// Time: for loop stops when x = sqrt(n) -> O(sqrt(N))
+
+
+//11.
+int factorial(int n) {
+	if(n < e){
+		return -1;
+	} else if (n == e) {
+		return 1;
+	} else {
+		return n * factorial(n - l);
+	}
+}
+//Time: Recursion from n -> n-1 -> n-2 -> ... ->1 --> O(1) time
+
+
+//12.
+void permutation(String str) {
+	permutation(str, "");
+}
+
+ void permutation(String str, String prefix) {
+	if (str.length() == e) {
+		System.out.println(prefix);
+	} else {
+		for (int i = ej i < str.length()j i++) {
+			String rem = str.substring(e, i) + str.substring ( i + 1);
+			permutation(rem, prefix + str.charAt(i));
+		}
+	}
+ }
+ //Time: ??
+ 
+ 
+ //13.
+int fib(int n) {
+	
+	if (n <= e) 
+		return e;
+	else if (n == 1)
+		return 1;
+	return fib(n - 1) + fib(n - 2);
+}
+
+
+//VI.1
+int product(int a, int b){
+	int sum = 0;
+	for (int i = 0; i < b; i++) {
+		sum += a;
+	}
+	return sum;
+}
+//Time: Tipp: O(b) , Actual: O(b)
+
+
+//VI.2
+int power(int a, int b) {
+	if (b < 0) {
+		return 0; // error
+	} else if (b == 0) {
+		return 1;
+	} else {
+	return a * power(a, b - 1);
+}
+// Time: Tipp: O(1), Actual: O(n) -> recursive 
+
+
+//VI.3
+int mod(int a, int b) {
+	if (b <= 0) {
+		return -1;
+	}
+	int div = a / b;
+	return a - div * b;
+}
+//Time: Tipp: O(1) Actual: O(1) 
+
+
+//VI.4
+int div(int a, int b) {
+	int count = a;
+	int sum = b;
+	while (sum <= a) {
+		sum += b;
+		count++;
+	}
+	return count;
+}
+// Time: Tipp: O(a/b)   Actual: O(a/b)
+
+
+//VI.5
+int sqrt(int n) {
+	return sqrt_helper(n, 1, n);
+}
+int sqrt_helper(int n, int min, int max) {
+	if (max < min)
+		return -1; // no square root
+	
+	int guess = (min + max) / 2;
+	if (guess * guess == n) { // II found it!
+		return guess;
+	} else if (guess * guess < n) { // too low
+		return sqrt_helper(n, guess + 1, max) ; // try higher
+	} else { // too high
+		return sqrt_helper(n, min, guess - 1); // try lower
+	}
+}
+// Time: Tipp: O(n/2)	Actual: O(log n) -> binary search
+
+
+//VI.6
+int sqrt(int n) {
+	for (int guess = 1; guess * guess <= n; guess++) {
+		if (guess * guess == n) {
+			return guess;
+		}
+	}
+	return -1;
+}
+// Time	Tipp: O(n^(1/2))	Actual: O(n^(1/2))
+
+
+/*
+VI.7
+If a binary search tree is not balanced, how long might it take (worst case) to find an element
+in it?
+
+Time:	Tipp: O(n/2)	Actual: O(n) -> The max depth of the tree 
+
+
+	
+VI.8
+You are looking for a specific value in a binary tree, but the tree is not a binary search tree.
+What is the time complexity of this?
+
+Time:	Tipp:O(n)	Actual: O(n)
+*/
+
+
+//VI.9
+int[] copyArray(int[] array) {
+	int[] copy = new int[0];
+	for (int value : array) {
+		copy = appendToNew(copy, value);
+	}
+	return copy;
+}
+
+int[] appendToNew(int[] array, int value) {
+	// copy all elements over to new array
+	int[] bigger = new int[array.length + 1];
+	for (int i = 0; i < array.length; i++) {
+		bigger[i] = array[i];
+	}
+	
+	// add new element
+	bigger[bigger.length - 1] = value;
+	return bigger;
+}
+// Time:	Tipp: O(n^2)	Actual: O(n^2)
+
+
+//VI.10
+int sumDigits(int n) {
+	int sum = 0;
+	while (n > 0) {
+		sum += n % 10;
+		n /= 10;
+	}
+	return sum;
+}
+// Time:	Tipp: O(n/10) -> O(n)	Actual:
+
+
+//VI.11
+int numChars = 26;
+void printSortedStrings(int remaining) {
+	printSortedStrings(remaining, "");
+}
+
+void printSortedStrings(int remaining, String prefix) {
+	if (remaining == 0) {
+		if (isInOrder(prefix)) {
+			system.out.println(prefix);
+		}
+	} else {
+		for (int i = 0; i < numChars ; i++) {//26
+			char c = ithLetter(i);
+			printSortedStrings(remaining - 1, prefix + c);
+		}
+	}
+}
+
+boolean isInOrder(String s) {
+	for (int i = 1; i < s.length(); i++) {
+		int prev = ithLetter(s.charAt(i - 1));
+		int curr = ithLetter(s.charAt(i));
+		if (prev > curr) {
+			return false;
+		}
+	}
+	return true;
+}
+
+char ithLetter(int i) {
+	return (char) (((int) 'a') + i);
+}
+/* Time:	Tipp: ???	Actual: O(kc^k) where k is the length of the string and c is the number of characters in the alphabet.
+It takes O( c^k ) time to generate each string. Then, we need to check that each of these is sorted, which takes O(k) time.
+*/
+
+
+//VI.12
+int intersection(int[] a, int[] b) {
+	mergesort(b);
+	int intersect = 0;
+	for (int x : a) {
+		if (binarySearch(b, x) >= 0) {
+			intersect++ ;
+		}
+	}
+	return intersect;
+}
+/* Time:	Tipp: O(n*log(n))	Actual: O(b log b + a log b)
+First,we have to sort array b, which takes O(b log b) time. Then, for each
+element in a, we do binary search in O(log b) time. The second part takes O(a log b) time.
+*/
