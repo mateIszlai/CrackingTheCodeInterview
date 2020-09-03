@@ -16,7 +16,20 @@ namespace TechnicalQuestions
             {
                 return big.Count(c => c == small[0]);
             }
-            return 0;
+
+            var counter = 0;
+
+            for(int i = 0; i < big.Length - small.Length; i++)
+            {
+                var sub = big.Substring(i, small.Length);
+                counter += isPermutation(small, sub) ? 1 : 0;
+            }
+            return counter;
+        }
+
+        private bool isPermutation(string small, string sub)
+        {
+            return small.OrderBy(c => c).SequenceEqual( sub.OrderBy(c => c));
         }
     }
 }
