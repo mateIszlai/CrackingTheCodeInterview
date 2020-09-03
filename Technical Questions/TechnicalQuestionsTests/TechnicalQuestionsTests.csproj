@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="PermutationLocatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RansomNoteTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TechnicalQuestions\TechnicalQuestions.csproj">
