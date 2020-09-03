@@ -1,4 +1,7 @@
-﻿namespace TechnicalQuestions
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace TechnicalQuestions
 {
     public class RansomNote
     {
@@ -23,7 +26,28 @@
 
                 return false;
             }
-            return false;
+
+            var notes = new Dictionary<string, int>();
+            foreach (var n in _note.Split(' '))
+            {
+                if (notes.ContainsKey(n))
+                {
+                    notes[n]++;
+                    continue;
+                }
+                notes.Add(n, 1);
+            }
+
+
+            foreach(var word in magazine.Split(' '))
+            {
+                if (notes.ContainsKey(word))
+                {
+                    notes[word] --;
+                }
+            }
+            
+            return notes.Values.All(v => v <= 0);
         }
     }
 }
