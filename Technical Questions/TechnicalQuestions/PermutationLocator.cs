@@ -19,7 +19,7 @@ namespace TechnicalQuestions
 
             var counter = 0;
 
-            for(int i = 0; i < big.Length - small.Length; i++)
+            for(int i = 0; i < big.Length - small.Length + 1; i++)
             {
                 var sub = big.Substring(i, small.Length);
                 counter += isPermutation(small, sub) ? 1 : 0;
@@ -29,7 +29,7 @@ namespace TechnicalQuestions
 
         private bool isPermutation(string small, string sub)
         {
-            return small.OrderBy(c => c).SequenceEqual( sub.OrderBy(c => c));
+            return small.OrderBy(c => c).SequenceEqual(sub.OrderBy(c => c));
         }
     }
 }
