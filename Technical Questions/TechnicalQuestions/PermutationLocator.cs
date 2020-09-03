@@ -8,5 +8,9 @@ namespace TechnicalQuestions
 {
     public class PermutationLocator
     {
+        public int GetPermutationsNumber(string small, string big)
+        {
+            return 0;
+        }
     }
 }
