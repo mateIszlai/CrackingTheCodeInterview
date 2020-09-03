@@ -20,5 +20,19 @@ namespace TechnicalQuestionsTests
             _note = new RansomNote("a");
             Assert.IsNotNull(_note.isFormedFrom("b"));
         }
+
+        [Test]
+        public void IsFormedFrom_GivenOneCharacter_ReturnsTrue()
+        {
+            _note = new RansomNote("a");
+            Assert.IsTrue(_note.isFormedFrom("a"));
+        }
+
+        [Test]
+        public void IsFormedFrom_GivenOneCharacter_ReturnsFalse()
+        {
+            _note = new RansomNote("a");
+            Assert.IsFalse(_note.isFormedFrom("b"));
+        }
     }
 }
