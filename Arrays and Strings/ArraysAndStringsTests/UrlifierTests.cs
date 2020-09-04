@@ -1,5 +1,6 @@
 ﻿using ArraysAndStrings;
 using NUnit.Framework;
+using System;
 
 namespace ArraysAndStringsTests
 {
@@ -32,5 +33,16 @@ namespace ArraysAndStringsTests
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void UrlifyThrowExceptionWhenLessEndSpace()
+        {
+            Assert.Throws<ArgumentException>(() => _urlifier.Urlify("a b ".ToCharArray(), 3));
+        }
+
+        [Test]
+        public void UrlifyThrowExceptionWhenMoreEndSpace()
+        {
+            Assert.Throws<ArgumentException>(() => _urlifier.Urlify("a b    ".ToCharArray(), 3));
+        }
     }
 }
