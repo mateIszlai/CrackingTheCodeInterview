@@ -1,5 +1,6 @@
 ﻿using ArraysAndStrings;
 using NUnit.Framework;
+using System.Text;
 
 namespace ArraysAndStringsTests
 {
@@ -37,6 +38,17 @@ namespace ArraysAndStringsTests
         public void SimpleCaseWithNumberFalse()
         {
             Assert.IsFalse(_stringIdentifier.IsUnique("a77"));
+        }
+
+        [Test]
+        public void LongStringReturnFalse()
+        {
+            var stringBuilder = new StringBuilder();
+            for (int i = 0; i < 200; i++)
+            {
+                stringBuilder.Append('a');
+            }
+            Assert.IsFalse(_stringIdentifier.IsUnique(stringBuilder.ToString()));
         }
 
     }
