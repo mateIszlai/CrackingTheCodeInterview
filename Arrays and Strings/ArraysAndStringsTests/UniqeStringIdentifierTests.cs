@@ -26,5 +26,18 @@ namespace ArraysAndStringsTests
         {
             Assert.IsFalse(_stringIdentifier.IsUnique("aa"));
         }
+
+        [Test]
+        public void SimpleCaseWithNumberTrue()
+        {
+            Assert.IsFalse(_stringIdentifier.IsUnique("a7"));
+        }
+
+        [Test]
+        public void SimpleCaseWithNumberFalse()
+        {
+            Assert.IsFalse(_stringIdentifier.IsUnique("a77"));
+        }
+
     }
 }
