@@ -19,21 +19,23 @@ namespace ArraysAndStrings
                 {
                     for (int j = 0; j < 3; j++)
                     {
+                        var temp = i;
                         switch (j)
                         {
                             case 0:
-                                s[i + endSpaces] = '0';
+                                s[temp + endSpaces] = '0';
                                 break;
                             case 1:
-                                s[i + endSpaces] = '2';
+                                s[temp + endSpaces] = '2';
                                 break;
                             case 2:
-                                s[i + endSpaces] = '%';
+                                s[temp + endSpaces] = '%';
                                 break;
                         }
-                        i--;
+                        temp--;
+                        endSpaces--;
                     }
-                    i++;
+                    endSpaces++;
                     continue;
                 }
 
