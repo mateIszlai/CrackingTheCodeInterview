@@ -14,5 +14,17 @@ namespace ArraysAndStringsTests
             var actual = _stringIdentifier.IsUnique("abc");
             Assert.That(actual == true || actual == false);
         }
+
+        [Test]
+        public void SimpleCaseTrue()
+        {
+            Assert.IsTrue(_stringIdentifier.IsUnique("a"));
+        }
+
+        [Test]
+        public void SimpleCaseFalse()
+        {
+            Assert.IsFalse(_stringIdentifier.IsUnique("aa"));
+        }
     }
 }
