@@ -56,5 +56,17 @@ namespace ArraysAndStringsTests
         {
             Assert.IsFalse(_permutationIdentifier.isPermutation("asdfgvjkl", "dafskjghl"));
         }
+
+        [Test]
+        public void isPermutationRepeatedChars()
+        {
+            Assert.IsTrue(_permutationIdentifier.isPermutation("hjkeimxnsgkleam", "lkjeihmknsxgeam"));
+        }
+
+        [Test]
+        public void isPermutationRepeatedChars1()
+        {
+            Assert.IsFalse(_permutationIdentifier.isPermutation("hjkeimxnsgkleam", "jeeihmmknsxgeam"));
+        }
     }
 }
