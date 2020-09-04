@@ -31,7 +31,7 @@ namespace ArraysAndStringsTests
         [Test]
         public void SimpleCaseWithNumberTrue()
         {
-            Assert.IsFalse(_stringIdentifier.IsUnique("a7"));
+            Assert.IsTrue(_stringIdentifier.IsUnique("a7"));
         }
 
         [Test]
@@ -49,6 +49,18 @@ namespace ArraysAndStringsTests
                 stringBuilder.Append('a');
             }
             Assert.IsFalse(_stringIdentifier.IsUnique(stringBuilder.ToString()));
+        }
+
+        [Test]
+        public void LongCase()
+        {
+            Assert.IsFalse(_stringIdentifier.IsUnique("tcew676ewfeobcueca()&V"));
+        }
+
+        [Test]
+        public void LongCase1()
+        {
+            Assert.IsTrue(_stringIdentifier.IsUnique("@Gfwgz 12547db<r9-_tuk"));
         }
 
     }
