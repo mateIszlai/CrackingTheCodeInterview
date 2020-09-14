@@ -15,7 +15,8 @@ namespace ArraysAndStrings
 
             foreach (var c in s)
             {
-                charCount[char.ToUpper(c) - 'A']++;
+                if (c != ' ')
+                    charCount[char.ToUpper(c) - 'A']++;
             }
 
             return charCount.Count(count => count % 2 == 1) <= 1;
