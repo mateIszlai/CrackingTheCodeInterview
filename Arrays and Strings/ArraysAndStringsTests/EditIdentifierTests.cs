@@ -100,5 +100,17 @@ namespace ArraysAndStringsTests
             // One replace, one remove
             Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("vnrzavgaea", "vnrxavgea"));
         }
+
+        [Test]
+        public void MoreEditReturnFalse()
+        {
+            Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("vnhuisztigrs", "vnhauisztlrsa"));
+        }
+
+        [Test]
+        public void MoreEditReturnFalse1()
+        {
+            Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("vnzrivzr", "vghvzrfuz"));
+        }
     }
 }
