@@ -4,9 +4,11 @@ namespace ArraysAndStrings
 {
     public class PalindromPermutationIdentifier
     {
-        public bool IsPlaindromePermutation(string s)
+        public bool IsPalindromePermutation(string s)
         {
-            return false;
+            if (s.Length == 0)
+                return false;
+            return true;
         }
     }
 }
