@@ -26,7 +26,7 @@ namespace ArraysAndStrings
             }
             sb.Append(before);
             sb.Append(beforeCount);
-            return sb.ToString();
+            return  sb.Length < s.Length ? sb.ToString() : s;
         }
     }
 }
