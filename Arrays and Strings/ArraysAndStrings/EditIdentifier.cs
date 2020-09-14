@@ -31,7 +31,15 @@
                 }
                 return counter <= 1;
             }
-            return false;
+
+            var changeCounter = 0;
+            for (int i = 0; i < before.Length; i++)
+            {
+                if (before[i] != after[i])
+                    changeCounter++;
+            }
+
+            return changeCounter <= 1;
         }
     }
 }
