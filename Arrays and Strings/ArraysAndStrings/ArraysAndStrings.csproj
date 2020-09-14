@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditIdentifier.cs" />
     <Compile Include="PalindromPermutationIdentifier.cs" />
     <Compile Include="PermutationIdentifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
