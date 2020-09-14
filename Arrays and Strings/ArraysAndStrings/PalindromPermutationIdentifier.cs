@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace ArraysAndStrings
 {
@@ -11,7 +11,14 @@ namespace ArraysAndStrings
             else if (s.Length == 1)
                 return true;
 
-            return true;
+            var charCount = new int[27];
+
+            foreach (var c in s)
+            {
+                charCount[char.ToUpper(c) - 'A']++;
+            }
+
+            return charCount.Count(count => count % 2 == 1) <= 1;
         }
     }
 }
