@@ -26,5 +26,28 @@ namespace ArraysAndStringsTests
             Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("a"));
         }
 
+        [Test]
+        public void SimpleTrueCase()
+        {
+            Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("abab"));
+        }
+
+        [Test]
+        public void SimpleTrueCase1()
+        {
+            Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("ababc"));
+        }
+
+        [Test]
+        public void SimpleFalseCase()
+        {
+            Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation("ab"));
+        }
+
+        [Test]
+        public void SimpleFalseCase1()
+        {
+            Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation("abbacd"));
+        }
     }
 }
