@@ -75,5 +75,19 @@ namespace ArraysAndStringsTests
 
             Assert.AreEqual(expected, _matrixZeroer.AddZeros(matrix));
         }
+
+        [Test]
+        public void AddZerosNoAddingZerosWhenNoZero()
+        {
+            var matrix = new int[][]
+            {
+                new int[]{15, 12, 3, 4},
+                new int[]{1, 2, 5, 4},
+                new int[]{1, 5, 35, 4},
+                new int[]{14, 24, 3, 48},
+                new int[]{24, 2, 30, 4}
+            };
+            Assert.AreEqual(matrix, _matrixZeroer.AddZeros(matrix));
+        }
     }
 }
