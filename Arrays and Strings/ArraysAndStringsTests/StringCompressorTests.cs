@@ -25,5 +25,23 @@ namespace ArraysAndStringsTests
         {
             Assert.AreEqual("a4b2c3d5", _stringCompressor.Compress("aaaabbcccddddd"));
         }
+
+        [Test]
+        public void CompressRepeatedCharsWork()
+        {
+            Assert.AreEqual("a4b2a1c3d5c2", _stringCompressor.Compress("aaaabbacccdddddcc"));
+        }
+
+        [Test]
+        public void ReturnGivenStringWhenTheCompressLonger()
+        {
+            Assert.AreEqual("abcdefg", _stringCompressor.Compress("abcdefg"));
+        }
+
+        [Test]
+        public void ReturnGivenStringWhenTheCompressEqualLong()
+        {
+            Assert.AreEqual("aabbcddd", _stringCompressor.Compress("aabbcddd"));
+        }
     }
 }
