@@ -37,5 +37,17 @@ namespace ArraysAndStringsTests
         {
             Assert.IsTrue(_editIdentifier.IsEditedMaxOnce("avrieubvvba", "avriexubvvba"));
         }
+
+        [Test]
+        public void RemoveReturnTrue()
+        {
+            Assert.IsTrue(_editIdentifier.IsEditedMaxOnce("abcd", "abd"));
+        }
+
+        [Test]
+        public void RemoveReturnTrue1()
+        {
+            Assert.IsTrue(_editIdentifier.IsEditedMaxOnce("abegzwcwzvcacd", "abegzwcwzvcac"));
+        }
     }
 }
