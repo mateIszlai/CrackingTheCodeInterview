@@ -19,5 +19,11 @@ namespace ArraysAndStringsTests
         {
             Assert.AreEqual("a4", _stringCompressor.Compress("aaaa"));
         }
+
+        [Test]
+        public void CompressMoreCharWork()
+        {
+            Assert.AreEqual("a4b2c3d5", _stringCompressor.Compress("aaaabbcccddddd"));
+        }
     }
 }
