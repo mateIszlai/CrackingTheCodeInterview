@@ -20,6 +20,11 @@ namespace ArraysAndStringsTests
             Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation(string.Empty));
         }
 
+        [Test]
+        public void GivenOneCharacterReturnTrue()
+        {
+            Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("a"));
+        }
 
     }
 }
