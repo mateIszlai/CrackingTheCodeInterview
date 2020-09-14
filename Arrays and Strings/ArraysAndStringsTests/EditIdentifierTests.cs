@@ -79,5 +79,26 @@ namespace ArraysAndStringsTests
         {
             Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("abcdhriev", "abcvhxiev"));
         }
+
+        [Test]
+        public void DoubleMixedReturnFalse()
+        {
+            //One remove, one insert
+            Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("nvurhervgai", "nvrhervgaie"));
+        }
+
+        [Test]
+        public void DoubleMixedReturnFalse1()
+        {
+            // One insert, one replace
+            Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("mvhcebabvvrz", "mvhcpebabgvrz"));
+        }
+
+        [Test]
+        public void DoubleMixedReturnFalse2()
+        {
+            // One replace, one remove
+            Assert.IsFalse(_editIdentifier.IsEditedMaxOnce("vnrzavgaea", "vnrxavgea"));
+        }
     }
 }
