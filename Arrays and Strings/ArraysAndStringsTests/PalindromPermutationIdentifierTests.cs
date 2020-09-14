@@ -49,5 +49,29 @@ namespace ArraysAndStringsTests
         {
             Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation("abbacd"));
         }
+
+        [Test]
+        public void MoreWordsTrueCase()
+        {
+            Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("Tact Coa"));
+        }
+
+        [Test]
+        public void MoreWordsTrueCase1()
+        {
+            Assert.IsTrue(_palindromPermutationIdentifier.IsPalindromePermutation("Tact Coa Zoz abbax"));
+        }
+
+        [Test]
+        public void MoreWordsFalseCase()
+        {
+            Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation("Tact Coa Zoz kx"));
+        }
+
+        [Test]
+        public void MoreWordsFalseCase1()
+        {
+            Assert.IsFalse(_palindromPermutationIdentifier.IsPalindromePermutation("Tact Coa Zoz xa"));
+        }
     }
 }
