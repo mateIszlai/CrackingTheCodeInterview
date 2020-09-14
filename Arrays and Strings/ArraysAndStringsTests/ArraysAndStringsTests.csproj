@@ -52,6 +52,7 @@
     <Compile Include="PalindromPermutationIdentifierTests.cs" />
     <Compile Include="PermutationIdentifierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringCompressorTests.cs" />
     <Compile Include="UniqeStringIdentifierTests.cs" />
     <Compile Include="UrlifierTests.cs" />
   </ItemGroup>
