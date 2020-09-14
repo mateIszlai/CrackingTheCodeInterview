@@ -8,6 +8,9 @@ namespace ArraysAndStrings
         {
             if (s.Length == 0)
                 return false;
+            else if (s.Length == 1)
+                return true;
+
             return true;
         }
     }
