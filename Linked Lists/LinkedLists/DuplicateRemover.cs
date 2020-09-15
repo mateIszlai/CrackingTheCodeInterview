@@ -9,7 +9,7 @@ namespace LinkedLists
         {
             var numbers = new HashSet<int>();
             var node = linkedList;
-            while (node.Next != null)
+            while (node != null)
             {
                 if (numbers.Contains(node.Data))
                 {
