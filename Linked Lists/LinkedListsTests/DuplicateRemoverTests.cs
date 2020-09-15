@@ -22,24 +22,14 @@ namespace LinkedListsTests
             Assert.IsType<Node<int>>(_duplicateRemover.Remove(_linkedList));
         }
 
-        [Fact]
-        public void RemoveWorksForOneRemove()
-        {
-            _linkedList.Append(5);
-            Assert.Equal(_expected, _duplicateRemover.Remove(_linkedList));
-        }
+        [Theory]
+        [InlineData(5)]
+        [InlineData(0)]
+        [InlineData(9)]
 
-        [Fact]
-        public void RemoveWorksForOneRemoveFromHead()
+        public void RemoveWorksForOneRemove(int toAppend)
         {
-            _linkedList.Append(0);
-            Assert.Equal(_expected, _duplicateRemover.Remove(_linkedList));
-        }
-
-        [Fact]
-        public void RemoveWorksForOneRemoveFromEnd()
-        {
-            _linkedList.Append(9);
+            _linkedList.Append(toAppend);
             Assert.Equal(_expected, _duplicateRemover.Remove(_linkedList));
         }
 
