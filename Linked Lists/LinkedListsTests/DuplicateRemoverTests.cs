@@ -33,6 +33,21 @@ namespace LinkedListsTests
             Assert.Equal(_expected, _duplicateRemover.Remove(_linkedList));
         }
 
+        [Theory]
+        [InlineData(15)]
+        [InlineData(30)]
+        [InlineData(-2)]
+        public void RemoveWorksForNoRemove(int toAppend)
+        {
+            
+            _linkedList.Append(toAppend);
+            _expected.Append(toAppend);
+            
+            Assert.Equal(_expected, _duplicateRemover.Remove(_linkedList));
+        }
+
+
+
         private void SeedData()
         {
             for (int i = 1; i < 10; i++)
